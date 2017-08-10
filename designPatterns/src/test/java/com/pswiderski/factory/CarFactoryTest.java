@@ -1,6 +1,6 @@
 package com.pswiderski.factory;
 
-import com.pswiderski.common.Car;
+import com.pswiderski.common.cars.Car;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,6 +28,9 @@ public class CarFactoryTest {
     log.info(toyota.toString());
     Assert.assertEquals(toyota.getName(),"Toyota");
 
+    Car toyota2 = carFactory.getCar("toyota");
+
+    log.info(toyota2.toString());
 
   }
 

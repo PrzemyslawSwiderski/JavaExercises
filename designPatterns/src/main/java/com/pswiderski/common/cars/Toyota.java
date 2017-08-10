@@ -1,4 +1,4 @@
-package com.pswiderski.common;
+package com.pswiderski.common.cars;
 
 public class Toyota extends Car {
 

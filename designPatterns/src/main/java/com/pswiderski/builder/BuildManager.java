@@ -1,6 +1,6 @@
 package com.pswiderski.builder;
 
-import com.pswiderski.common.Car;
+import com.pswiderski.common.cars.Car;
 
 public class BuildManager {
 

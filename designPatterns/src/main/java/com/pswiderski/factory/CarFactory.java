@@ -1,15 +1,15 @@
 package com.pswiderski.factory;
 
-import com.pswiderski.common.Audi;
-import com.pswiderski.common.Car;
-import com.pswiderski.common.Fiat;
-import com.pswiderski.common.Toyota;
+import com.pswiderski.common.cars.Audi;
+import com.pswiderski.common.cars.Car;
+import com.pswiderski.common.cars.Fiat;
+import com.pswiderski.common.cars.Toyota;
 
 public class CarFactory {
 
   public Car getCar(String carType) {
     if (carType == null) {
-      return new Car();
+      throw new IllegalArgumentException("Car type should not be null! ");
     }
 
     switch (carType.toUpperCase()) {
@@ -19,9 +19,10 @@ public class CarFactory {
         return new Fiat();
       case "TOYOTA":
         return new Toyota();
+      default:
+        throw new IllegalArgumentException("Cannot create car of type " + carType);
     }
 
-    return new Car();
   }
 
 }
