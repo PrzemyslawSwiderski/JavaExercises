@@ -45,5 +45,6 @@
 
   <modules>
     <module>designPatterns</module>
+    <module>hashCodeAndEquals</module>
   </modules>
 </project>
