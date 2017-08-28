@@ -1,30 +1,25 @@
 package com.pswiderski.adapter;
 
-public class GamesAdapterImpl implements GamesAdapter {
+public class GamesAdapterObjectImpl implements GamesAdapter {
 
-  private PcComputer pcComputer = new PcComputer();
-
-  private PlayStation playStation = new PlayStation();
-
-  private Xbox xbox = new Xbox();
+  private SourceInterface sourceInterface = new SourceInterfaceImpl();
 
   @Override
   public void playGame(Game game) {
 
     switch (game.getConsoleType()) {
       case "PC":
-        pcComputer.playPCGame(game);
+        sourceInterface.playPCGame(game);
         break;
       case "PLAYSTATION":
-        playStation.playPlayStationGame(game);
+        sourceInterface.playPlayStationGame(game);
         break;
       case "XBOX":
-        xbox.playXboxGame(game);
+        sourceInterface.playXboxGame(game);
         break;
       default:
         throw new IllegalArgumentException("Console type not supported");
     }
 
   }
-
 }
