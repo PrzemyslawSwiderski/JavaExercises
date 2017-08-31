@@ -55,4 +55,26 @@ public class TestsHelper {
     return users;
   }
 
+  public static class AvgResultCounter {
+
+    private static long resultsNumber = 0;
+
+    private static long timeSumInMilliseconds = 0;
+
+    public static double getAverageTime() {
+      return timeSumInMilliseconds / resultsNumber;
+    }
+
+    public static void addResult(long result) {
+      timeSumInMilliseconds += result;
+      resultsNumber++;
+    }
+
+    public static void resetCounter() {
+      resultsNumber = 0;
+      timeSumInMilliseconds = 0;
+    }
+
+  }
+
 }
