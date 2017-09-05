@@ -8,8 +8,8 @@ public class SmoothingFilter implements ImageFilter {
   public Optional<BufferedImage> processImage(BufferedImage input) {
     Optional<BufferedImage> imageWorkingCopy = ImageProcessor.deepCopy(input);
     imageWorkingCopy.ifPresent(image -> {
-      for (int h = 1; h < image.getHeight() - 1; ++h) {
-        for (int w = 1; w < image.getWidth() - 1; ++w) {
+      for (int h = 1; h < input.getHeight() - 1; ++h) {
+        for (int w = 1; w < input.getWidth() - 1; ++w) {
           double red = 0, green = 0, blue = 0;
           for (int currenth = h - 1; currenth < h + 2; ++currenth) {
             for (int currentw = w - 1; currentw < w + 2; ++currentw) {

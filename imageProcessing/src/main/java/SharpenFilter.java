@@ -10,8 +10,8 @@ public class SharpenFilter implements ImageFilter {
     Optional<BufferedImage> imageWorkingCopy = ImageProcessor.deepCopy(input);
     imageWorkingCopy.ifPresent(image ->
     {
-      for (int h = 1; h < image.getHeight() - 1; ++h) {
-        for (int w = 1; w < image.getWidth() - 1; ++w) {
+      for (int h = 1; h < input.getHeight() - 1; ++h) {
+        for (int w = 1; w < input.getWidth() - 1; ++w) {
           Color up = new Color(input.getRGB(w, h - 1));
           Color left = new Color(input.getRGB(w - 1, h));
           Color right = new Color(input.getRGB(w + 1, h));

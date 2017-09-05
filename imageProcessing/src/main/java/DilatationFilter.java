@@ -1,33 +1,31 @@
+import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.util.Arrays;
 import java.util.Optional;
 
-public class MedianFilter implements ImageFilter {
-
+public class DilatationFilter implements ImageFilter {
 
   @Override
   public Optional<BufferedImage> processImage(BufferedImage input) {
     Optional<BufferedImage> imageWorkingCopy = ImageProcessor.deepCopy(input);
+
     imageWorkingCopy.ifPresent(image ->
     {
       for (int h = 1; h < input.getHeight() - 1; ++h) {
         for (int w = 1; w < input.getWidth() - 1; ++w) {
-          int[] values = new int[9];
-          int index = 0;
-          for (int currenth = h - 1; currenth < h + 2; ++currenth) {
-            for (int currentw = w - 1; currentw < w + 2; ++currentw) {
-              values[index] = input.getRGB(currentw, currenth);
-              ++index;
+          for (int i = -1; i < 2; ++i) {
+            for (int j = -1; j < 2; ++j) {
+              if (i != 0 && j != 0) {
+                Color currentColor = new Color(input.getRGB(w + i, h + j));
+                if (currentColor.getRGB() == Color.BLACK.getRGB()) {
+                  image.setRGB(w, h, Color.BLACK.getRGB());
+                  break;
+                }
+              }
             }
           }
-          Arrays.sort(values);
-          int mediana = values[4];
-          image.setRGB(w, h, mediana);
-
         }
       }
     });
-
     return imageWorkingCopy;
 
   }

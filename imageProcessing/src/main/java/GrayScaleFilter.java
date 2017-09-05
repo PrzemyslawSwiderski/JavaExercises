@@ -11,9 +11,9 @@ public class GrayScaleFilter implements ImageFilter {
     Optional<BufferedImage> imageWorkingCopy = ImageProcessor.deepCopy(input);
     imageWorkingCopy.ifPresent(image ->
     {
-      for (int h = 0; h < image.getHeight(); ++h) {
-        for (int w = 0; w < image.getWidth(); ++w) {
-          Color c = new Color(image.getRGB(w, h));
+      for (int h = 0; h < input.getHeight(); ++h) {
+        for (int w = 0; w < input.getWidth(); ++w) {
+          Color c = new Color(input.getRGB(w, h));
           int red = c.getRed();
           image.setRGB(w, h, new Color(red, red, red).getRGB());
         }

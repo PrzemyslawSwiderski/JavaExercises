@@ -3,7 +3,7 @@ import java.util.Optional;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ImageProcessorTest {
+public class ImageProcessorTests {
 
   @Test
   public void applyMedianaFilter() {
