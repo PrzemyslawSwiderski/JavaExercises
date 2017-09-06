@@ -2,7 +2,7 @@ import java.awt.image.BufferedImage;
 import java.util.Optional;
 import org.junit.Test;
 
-public class BinarizationManualTests {
+public class BinarizationManualTest {
 
   @Test
   public void applyBinarizationManual200TresholdFilter() {
