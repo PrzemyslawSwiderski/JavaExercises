@@ -1,7 +1,5 @@
 package com.pswiderski;
 
-import lombok.Getter;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -14,19 +12,16 @@ public class TestsHelper {
 
     private long userId = 1;
 
-    @Getter
-    private User userToFindFromLastGetRandomUsersMethod;
-
     public User getRandomUser(UserType userType) {
 
         User user;
 
         switch (userType) {
             case WRONG_HASH_CODE:
-                user = new UserWithWrongHashCode();
+                user = UserWithWrongHashCode.builder().build();
                 break;
             case CORRECT_HASH_CODE:
-                user = new UserWithCorrectHashCode();
+                user = UserWithCorrectHashCode.builder().build();
                 break;
             default:
                 throw new IllegalArgumentException("Not supported userType");
@@ -45,41 +40,17 @@ public class TestsHelper {
     }
 
 
-    public Map<User, String> getRandomUsersMap(int howMany, int userToFindIndex, UserType userType) {
+    public Map<User, String> getRandomUsersMap(int howMany, UserType userType) {
 
         Map<User, String> users = new HashMap<>();
 
         for (int i = 0; i < howMany; i++) {
             User randomUser = getRandomUser(userType);
             users.put(randomUser, randomUser.getId());
-            if (userToFindIndex == i) {
-                userToFindFromLastGetRandomUsersMethod = randomUser;
-            }
+            users.get(randomUser);
         }
 
         return users;
-    }
-
-    public static class AvgResultCounter {
-
-        private static long resultsNumber = 0;
-
-        private static long timeSumInMilliseconds = 0;
-
-        public static double getAverageTime() {
-            return timeSumInMilliseconds / resultsNumber;
-        }
-
-        public static void addResult(long result) {
-            timeSumInMilliseconds += result;
-            resultsNumber++;
-        }
-
-        public static void resetCounter() {
-            resultsNumber = 0;
-            timeSumInMilliseconds = 0;
-        }
-
     }
 
 }

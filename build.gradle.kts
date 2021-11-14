@@ -17,6 +17,8 @@ subprojects {
         add("implementation", "ch.qos.logback:logback-classic:1.2.6")
         add("testImplementation", platform("org.junit:junit-bom:5.8.1"))
         add("testImplementation", "org.junit.jupiter:junit-jupiter")
+        add("testImplementation", "org.junit.jupiter:junit-jupiter-params")
+        add("testImplementation", "org.junit-pioneer:junit-pioneer:1.5.0")
     }
 
     repositories {
