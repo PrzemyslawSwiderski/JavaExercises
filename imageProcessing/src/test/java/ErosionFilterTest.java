@@ -1,33 +1,34 @@
+import org.junit.jupiter.api.Test;
+
 import java.awt.image.BufferedImage;
 import java.util.Optional;
-import org.junit.Test;
 
 public class ErosionFilterTest {
 
-  @Test
-  public void processImageTest() throws Exception {
+    @Test
+    public void processImageTest() throws Exception {
 
-    ImageProcessor imageProcessor = new ImageProcessor();
+        ImageProcessor imageProcessor = new ImageProcessor();
 
-    Optional<BufferedImage> image = imageProcessor
-        .readImageFromPath("src\\main\\resources\\inputImage.jpg");
+        Optional<BufferedImage> image = imageProcessor
+                .readImageFromPath("src\\main\\resources\\inputImage.jpg");
 
-    image.ifPresent(readImage -> {
+        image.ifPresent(readImage -> {
 
-      Optional<BufferedImage> binarizedImage = imageProcessor
-          .applyFilter(new BinarizationPercentageFilter(50), readImage);
+            Optional<BufferedImage> binarizedImage = imageProcessor
+                    .applyFilter(new BinarizationPercentageFilter(50), readImage);
 
-      binarizedImage.ifPresent(bufferedImage -> {
-        Optional<BufferedImage> erodedImage = imageProcessor
-            .applyFilter(new ErosionFilter(), bufferedImage);
+            binarizedImage.ifPresent(bufferedImage -> {
+                Optional<BufferedImage> erodedImage = imageProcessor
+                        .applyFilter(new ErosionFilter(), bufferedImage);
 
-        erodedImage.ifPresent(bufferedImage1 -> imageProcessor
-            .writeImageToPath(bufferedImage1,
-                "src\\main\\resources\\erodedImage.jpg"));
-      });
-    });
+                erodedImage.ifPresent(bufferedImage1 -> imageProcessor
+                        .writeImageToPath(bufferedImage1,
+                                "src\\main\\resources\\erodedImage.jpg"));
+            });
+        });
 
 
-  }
+    }
 
 }

@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface Enemy {
 
-  void attack();
+    void attack();
 
-  List<String> traits();
+    List<String> traits();
 
 }

@@ -2,53 +2,51 @@ package com.pswiderski.common.cars;
 
 public class Car {
 
-  @Override
-  public String toString() {
-    return "Car{" +
-        "name='" + name + '\'' +
-        ", price=" + price +
-        ", engine='" + engine + '\'' +
-        '}';
-  }
+    private String name;
+    private Double price;
+    private String engine;
 
-  private String name;
+    public Car() {
+        initFields();
+    }
 
-  private Double price;
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", engine='" + engine + '\'' +
+                '}';
+    }
 
-  private String engine;
+    public String getName() {
+        return name;
+    }
 
-  public Car() {
-    initFields();
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public Double getPrice() {
+        return price;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
-  public Double getPrice() {
-    return price;
-  }
+    public String getEngine() {
+        return engine;
+    }
 
-  public void setPrice(Double price) {
-    this.price = price;
-  }
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
 
-  public String getEngine() {
-    return engine;
-  }
-
-  public void setEngine(String engine) {
-    this.engine = engine;
-  }
-
-  public void initFields() {
-    setName("default");
-    setEngine("default");
-    setPrice(0.0);
-  }
+    public void initFields() {
+        setName("default");
+        setEngine("default");
+        setPrice(0.0);
+    }
 
 }

@@ -2,9 +2,9 @@ package com.pswiderski.adapter;
 
 public interface SourceInterface {
 
-  void playPlayStationGame(Game game);
+    void playPlayStationGame(Game game);
 
-  void playPCGame(Game game);
+    void playPCGame(Game game);
 
-  void playXboxGame(Game game);
+    void playXboxGame(Game game);
 }

@@ -2,34 +2,35 @@ package com.pswiderski.builder;
 
 import com.pswiderski.common.cars.Car;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Slf4j
 public class CarsBuilderTest {
 
-  @Test
-  public void testBuilder() {
-    BuildManager buildManager = new BuildManager();
+    @Test
+    public void testBuilder() {
+        BuildManager buildManager = new BuildManager();
 
-    CarsBuilder mazdaBuilder = new MazdaBuilder();
+        CarsBuilder mazdaBuilder = new MazdaBuilder();
 
-    CarsBuilder ferrariBuilder = new FerrariBuilder();
+        CarsBuilder ferrariBuilder = new FerrariBuilder();
 
-    buildManager.setCarsBuilder(mazdaBuilder);
+        buildManager.setCarsBuilder(mazdaBuilder);
 
-    Car mazda = buildManager.buildCar();
+        Car mazda = buildManager.buildCar();
 
-    log.info(mazda.toString());
+        log.info(mazda.toString());
 
-    Assert.assertEquals(mazda.getName(),"Mazda");
-    buildManager.setCarsBuilder(ferrariBuilder);
+        assertEquals(mazda.getName(), "Mazda");
+        buildManager.setCarsBuilder(ferrariBuilder);
 
-    Car ferrari = buildManager.buildCar();
+        Car ferrari = buildManager.buildCar();
 
-    System.out.println(ferrari);
-    Assert.assertEquals(ferrari.getName(),"Ferrari");
+        System.out.println(ferrari);
+        assertEquals(ferrari.getName(), "Ferrari");
 
-  }
+    }
 
 }

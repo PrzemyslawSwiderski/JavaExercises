@@ -1,0 +1,1 @@
+include("designPatterns", "hashCodeAndEquals", "imageProcessing")

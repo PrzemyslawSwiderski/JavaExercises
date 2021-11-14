@@ -3,6 +3,6 @@ import java.util.Optional;
 
 public interface ImageFilter {
 
-  Optional<BufferedImage> processImage(BufferedImage input);
+    Optional<BufferedImage> processImage(BufferedImage input);
 
 }

@@ -5,15 +5,15 @@ import lombok.Data;
 @Data
 public class UserWithWrongHashCode implements User {
 
-  private String id;
+    private String id;
 
-  private String username;
+    private String username;
 
-  private Integer age;
+    private Integer age;
 
-  @Override
-  public int hashCode() {
-    return -1;
-  }
+    @Override
+    public int hashCode() {
+        return -1;
+    }
 
 }

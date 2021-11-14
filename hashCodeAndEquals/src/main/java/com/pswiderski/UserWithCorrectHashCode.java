@@ -3,12 +3,12 @@ package com.pswiderski;
 import lombok.Data;
 
 @Data
-public class UserWithCorrectHashCode implements User{
+public class UserWithCorrectHashCode implements User {
 
-  private String id;
+    private String id;
 
-  private String username;
+    private String username;
 
-  private Integer age;
+    private Integer age;
 
 }

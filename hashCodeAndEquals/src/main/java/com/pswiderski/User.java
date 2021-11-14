@@ -2,16 +2,16 @@ package com.pswiderski;
 
 public interface User {
 
-  String getId();
+    String getId();
 
-  void setId(String id);
+    void setId(String id);
 
-  String getUsername();
+    String getUsername();
 
-  void setUsername(String username);
+    void setUsername(String username);
 
-  Integer getAge();
+    Integer getAge();
 
-  void setAge(Integer age);
+    void setAge(Integer age);
 
 }

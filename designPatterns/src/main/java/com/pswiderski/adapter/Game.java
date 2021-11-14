@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class Game {
 
-  private String consoleType = "NONE";
+    private String consoleType = "NONE";
 
-  private String title = "NONE";
+    private String title = "NONE";
 
 }

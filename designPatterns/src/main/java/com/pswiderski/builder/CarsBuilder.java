@@ -4,16 +4,16 @@ import com.pswiderski.common.cars.Car;
 
 public abstract class CarsBuilder {
 
-  private Car car = new Car();
+    private Car car = new Car();
 
-  public Car getCar() {
-    return car;
-  }
+    public Car getCar() {
+        return car;
+    }
 
-  public abstract void buildName();
+    public abstract void buildName();
 
-  public abstract void buildEngine();
+    public abstract void buildEngine();
 
-  public abstract void buildPrice();
+    public abstract void buildPrice();
 
 }

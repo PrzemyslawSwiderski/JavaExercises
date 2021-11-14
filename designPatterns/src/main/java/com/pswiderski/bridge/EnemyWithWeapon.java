@@ -5,10 +5,10 @@ import lombok.Getter;
 
 public abstract class EnemyWithWeapon extends BasicEnemy {
 
-  @lombok.Setter
-  @Getter
-  private Weapon weapon;
+    @lombok.Setter
+    @Getter
+    private Weapon weapon;
 
-  public abstract void attackWithWeapon();
+    public abstract void attackWithWeapon();
 
 }

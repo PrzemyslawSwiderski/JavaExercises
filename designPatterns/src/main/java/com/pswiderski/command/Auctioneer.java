@@ -5,19 +5,19 @@ import java.util.List;
 
 public class Auctioneer {
 
-  List<AuctionOperation> auctionOperations = new ArrayList<>();
+    List<AuctionOperation> auctionOperations = new ArrayList<>();
 
-  public void addAuctionOperation(AuctionOperation auctionOperation) {
-    auctionOperations.add(auctionOperation);
-  }
-
-  public void executeOperations() {
-
-    for (AuctionOperation auctionOperation : auctionOperations) {
-      auctionOperation.execute();
+    public void addAuctionOperation(AuctionOperation auctionOperation) {
+        auctionOperations.add(auctionOperation);
     }
 
-    auctionOperations.clear();
-  }
+    public void executeOperations() {
+
+        for (AuctionOperation auctionOperation : auctionOperations) {
+            auctionOperation.execute();
+        }
+
+        auctionOperations.clear();
+    }
 
 }
