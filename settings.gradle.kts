@@ -1,1 +1,1 @@
-include("designPatterns", "hashCodeAndEquals", "imageProcessing")
+include("designPatterns", "hashCodeAndEquals", "imageProcessing", "algorithms")
